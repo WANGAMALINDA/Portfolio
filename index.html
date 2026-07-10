@@ -77,7 +77,12 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin-left: auto;
+  }
   .nav-links a {
     color: var(--text-muted);
     text-decoration: none;
@@ -87,6 +92,60 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--accent-cyan); }
+  .nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    background: rgba(13,21,37,0.9);
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .nav-toggle:hover { border-color: var(--accent-cyan); transform: translateY(-1px); }
+  .nav-toggle-bars {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 14px;
+    position: relative;
+  }
+  .nav-toggle-bars span {
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), opacity 0.2s, top 0.28s cubic-bezier(0.22,1,0.36,1);
+  }
+  .nav-toggle-bars span:nth-child(1) { top: 0; }
+  .nav-toggle-bars span:nth-child(2) { top: 6px; }
+  .nav-toggle-bars span:nth-child(3) { top: 12px; }
+  nav.open .nav-toggle-bars span:nth-child(1) { top: 6px; transform: rotate(45deg); }
+  nav.open .nav-toggle-bars span:nth-child(2) { opacity: 0; }
+  nav.open .nav-toggle-bars span:nth-child(3) { top: 6px; transform: rotate(-45deg); }
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(6,11,20,0.6);
+    backdrop-filter: blur(2px);
+    z-index: 90;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  nav.open + .nav-backdrop {
+    display: block;
+    opacity: 1;
+  }
+  body.nav-locked { overflow: hidden; }
 
   /* ── WRAPPER ── */
   .wrapper { position: relative; z-index: 1; }
@@ -803,9 +862,56 @@
     .timeline-date { display: none; }
     .skills-layout { grid-template-columns: 1fr; }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    nav {
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+    }
+    .nav-toggle { display: inline-flex; }
+    .nav-links {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 1rem;
+      right: 1rem;
+      z-index: 95;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-left: 0;
+      padding: 0.75rem;
+      background: rgba(6,11,20,0.98);
+      border: 0.5px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.35);
+      opacity: 0;
+      transform: translateY(-8px);
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.22,1,0.36,1), visibility 0.22s;
+    }
+    nav.open .nav-links {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      visibility: visible;
+    }
+    .nav-links li + li {
+      border-top: 1px solid rgba(99,179,255,0.08);
+    }
+    .nav-links a {
+      display: block;
+      padding: 0.9rem 1rem;
+      border-radius: 12px;
+    }
+    .nav-links a:hover { background: rgba(0,229,255,0.06); }
     .highlights-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
+  }
+  @media (max-width: 420px) {
+    .container { padding: 0 1.25rem; }
+    .hero-name { font-size: clamp(2.4rem, 11vw, 3.2rem); }
+    .hero-btns { flex-direction: column; align-items: stretch; }
+    .hero-btns .btn-primary, .hero-btns .btn-ghost { justify-content: center; }
   }
 </style>
 </head>
@@ -817,7 +923,14 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">MW</div>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+    <span class="nav-toggle-bars" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+  <ul class="nav-links" id="primary-navigation">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
@@ -826,6 +939,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+<div class="nav-backdrop"></div>
 
 <div class="wrapper">
 
@@ -1247,6 +1361,37 @@
   <p>Malinda Wanga &nbsp;·&nbsp; Gauteng, South Africa &nbsp;·&nbsp; <a href="mailto:wangamalinda4@gmail.com">wangamalinda4@gmail.com</a></p>
   <p style="margin-top:0.4rem;">Code. Learn. Grow.</p>
 </footer>
+
+<script>
+  const nav = document.querySelector('nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const navBackdrop = document.querySelector('.nav-backdrop');
+
+  function setNavOpen(open) {
+    nav.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('nav-locked', open);
+  }
+
+  navToggle.addEventListener('click', () => {
+    setNavOpen(!nav.classList.contains('open'));
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => setNavOpen(false));
+  });
+
+  navBackdrop.addEventListener('click', () => setNavOpen(false));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) setNavOpen(false);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && nav.classList.contains('open')) setNavOpen(false);
+  });
+</script>
 
 </body>
 </html>
