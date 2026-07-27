@@ -15,8 +15,8 @@
     --ink-faint: #8a857a;
     --line: rgba(38,36,33,0.12);
     --line-soft: rgba(38,36,33,0.08);
-    --accent: #5b6b52;      /* muted olive */
-    --accent-2: #7a4f3a;    /* muted clay/brown */
+    --accent: #5b6b52;
+    --accent-2: #7a4f3a;
     --card: #fbfaf7;
     --shadow: 0 1px 2px rgba(38,36,33,0.04);
   }
@@ -35,7 +35,6 @@
 
   h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.01em; }
 
-  /* Navigation */
   nav {
     position: sticky;
     top: 0; left: 0; right: 0;
@@ -131,11 +130,9 @@
   nav.open + .nav-backdrop { display: block; opacity: 1; }
   body.nav-locked { overflow: hidden; }
 
-  /* Sections */
   section { padding: 5.5rem 0; }
   .container { max-width: 1040px; margin: 0 auto; padding: 0 2.5rem; }
 
-  /* Hero */
   #hero { padding-top: 4.5rem; padding-bottom: 4.5rem; }
   .hero-inner {
     display: grid;
@@ -260,7 +257,6 @@
     letter-spacing: 0.04em;
   }
 
-  /* Section header */
   .sec-header { margin-bottom: 2.6rem; }
   .sec-eyebrow {
     font-size: 0.72rem;
@@ -278,7 +274,6 @@
     color: var(--ink);
   }
 
-  /* Highlights grid */
   .highlights-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -303,7 +298,6 @@
   }
   .highlight-desc { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; }
 
-  /* Projects */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -360,7 +354,6 @@
   }
   .project-card:hover .project-arrow { transform: translateX(4px); color: var(--accent); }
 
-  /* Education */
   .education-grid {
     display: grid;
     grid-template-columns: 1fr 1.15fr;
@@ -426,7 +419,6 @@
   }
   .subject-list { font-size: 0.84rem; color: var(--ink-soft); line-height: 1.6; }
 
-  /* Skills */
   .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
   .skills-group-title {
     font-size: 0.72rem;
@@ -457,7 +449,6 @@
   .lang-bar-bg { height: 3px; background: var(--bg-2); border-radius: 3px; overflow: hidden; }
   .lang-bar-fill { height: 100%; border-radius: 3px; background: var(--accent); }
 
-  /* Certifications */
   .certs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -479,7 +470,6 @@
   .cert-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2); flex-shrink: 0; }
   .cert-name { font-size: 0.85rem; font-weight: 500; color: var(--ink); }
 
-  /* Accomplishments */
   .accomplishment-block {
     background: var(--card);
     border: 1px solid var(--line);
@@ -491,7 +481,6 @@
     line-height: 1.75;
   }
 
-  /* Additional info */
   .info-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
   .info-pill {
     display: inline-flex;
@@ -506,7 +495,6 @@
   }
   .info-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
-  /* Footer */
   footer {
     border-top: 1px solid var(--line);
     padding: 2.2rem 2.5rem;
@@ -644,7 +632,7 @@
         </div>
         <div class="highlight-card">
           <div class="highlight-title">Multi-certified</div>
-          <div class="highlight-desc">Certified in Python, JavaScript, C++, Ethical Hacking, and more across 7 certifications.</div>
+          <div class="highlight-desc">Certified across Python, JavaScript, C++, Ethical Hacking, and AWS Cloud technologies.</div>
         </div>
         <div class="highlight-card">
           <div class="highlight-title">IT diploma</div>
@@ -675,6 +663,45 @@
         <h2 class="sec-title">Featured projects</h2>
       </div>
       <div class="projects-grid">
+        <a href="https://wangamalinda.github.io/TrackServ/" class="project-card" target="_blank">
+          <div class="project-content">
+            <h3 class="project-title">TrackServ</h3>
+            <p class="project-desc">A civic reporting platform with a live admin dashboard, realtime data subscriptions, and community engagement features.</p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Supabase</span>
+              <span class="project-tag">Realtime</span>
+            </div>
+          </div>
+          <div class="project-arrow">→</div>
+        </a>
+
+        <a href="https://www.qhawelethuwc.co.za" class="project-card" target="_blank">
+          <div class="project-content">
+            <h3 class="project-title">Qhawelethu Wellness Counselling</h3>
+            <p class="project-desc">A client-facing booking and intake platform for a neurodiversity-affirming counselling practice, with a relational Supabase schema.</p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Supabase</span>
+              <span class="project-tag">SQL</span>
+            </div>
+          </div>
+          <div class="project-arrow">→</div>
+        </a>
+
+        <a href="https://wangamalinda.github.io/BusinessAdmin/" class="project-card" target="_blank">
+          <div class="project-content">
+            <h3 class="project-title">BusinessAdmin</h3>
+            <p class="project-desc">An admin management dashboard built for streamlined business operations and data handling.</p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Dashboard</span>
+            </div>
+          </div>
+          <div class="project-arrow">→</div>
+        </a>
+
         <a href="https://wangamalinda.github.io/Food-Paleis/" class="project-card" target="_blank">
           <div class="project-content">
             <h3 class="project-title">Food Paleis</h3>
@@ -924,8 +951,10 @@
         <div class="cert-card"><div class="cert-dot"></div><span class="cert-name">HTML5</span></div>
         <div class="cert-card"><div class="cert-dot"></div><span class="cert-name">C++ Essentials</span></div>
         <div class="cert-card"><div class="cert-dot"></div><span class="cert-name">Computer Literacy</span></div>
-        <div class="cert-card"><div class="cert-dot"></div><span class="cert-name">Best Learner: MS Excel</span></div>
-        <div class="cert-card"><div class="cert-dot"></div><span class="cert-name">AWS Cloud Fundamentals</span></div>
+        <div class="cert-card"><div class="cert-dot"></div><span class="cert-name">Top Achieving Student</span></div>
+        <div class="cert-card"><div class="cert-dot"></div><span class="cert-name">Best Student: MS Excel</span></div>
+        <div class="cert-card"><div class="cert-dot"></div><span class="cert-name">AWS Cloud Practitioner Essentials</span></div>
+        <div class="cert-card"><div class="cert-dot"></div><span class="cert-name">AWS Elastic VMware Service Fundamentals</span></div>
       </div>
     </div>
   </section>
