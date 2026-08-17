@@ -59,6 +59,7 @@
     gap: 2.2rem;
     list-style: none;
     margin-left: auto;
+    align-items: center;
   }
   .nav-links a {
     color: var(--ink-soft);
@@ -78,6 +79,20 @@
   }
   .nav-links a:hover { color: var(--ink); }
   .nav-links a:hover::after { width: 100%; }
+  .nav-cv-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.42rem 0.95rem !important;
+    color: var(--ink) !important;
+    font-weight: 500;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .nav-cv-link:hover { border-color: var(--accent); background: var(--card); }
+  .nav-cv-link::after { display: none; }
+  .nav-cv-link svg { width: 13px; height: 13px; }
 
   .nav-toggle {
     display: none;
@@ -213,6 +228,7 @@
     transition: opacity 0.2s;
   }
   .btn-primary:hover { opacity: 0.85; }
+  .btn-primary svg { width: 15px; height: 15px; }
   .btn-ghost {
     display: inline-flex;
     align-items: center;
@@ -228,6 +244,7 @@
     transition: all 0.2s;
   }
   .btn-ghost:hover { border-color: var(--accent); color: var(--ink); }
+  .btn-ghost svg { width: 15px; height: 15px; }
 
   .hero-avatar {
     width: 260px;
@@ -544,6 +561,7 @@
     .nav-links li + li { border-top: 1px solid var(--line-soft); }
     .nav-links a { display: block; padding: 0.8rem 0.9rem; }
     .nav-links a::after { display: none; }
+    .nav-cv-link { margin-top: 0.3rem; justify-content: center; }
     .highlights-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 420px) {
@@ -567,6 +585,12 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certs">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li>
+      <a href="Malinda_Wanga_CV.pdf" download class="nav-cv-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
+      </a>
+    </li>
   </ul>
 </nav>
 <div class="nav-backdrop"></div>
@@ -603,6 +627,10 @@
           </div>
           <div class="hero-btns">
             <a href="mailto:wangamalinda4@gmail.com" class="btn-primary">Get in touch</a>
+            <a href="Malinda_Wanga_CV.pdf" download class="btn-ghost">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
             <a href="#education" class="btn-ghost">View experience</a>
           </div>
         </div>
@@ -990,6 +1018,10 @@
       <div style="margin-top:2.6rem; display:flex; gap:1rem; flex-wrap:wrap;">
         <a href="mailto:wangamalinda4@gmail.com" class="btn-primary">Send an email</a>
         <a href="tel:+27664948899" class="btn-ghost">Call +27 66 494 8899</a>
+        <a href="Malinda_Wanga_CV.pdf" download class="btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
       </div>
     </div>
   </section>
