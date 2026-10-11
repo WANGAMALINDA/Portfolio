@@ -1,0 +1,39 @@
+# Wanga Malinda
+
+> Full-stack developer based in Gauteng, South Africa. IT Diploma graduate (Richfield Graduate Institute of Technology, expected December 2026, top of a 180+ student cohort). Builds and independently deploys production web systems for South African small businesses using JavaScript, React, Node.js, and Supabase/PostgreSQL.
+
+Portfolio: https://malindawanga.me/
+Contact: wangamalinda4@gmail.com
+GitHub: https://github.com/WANGAMALINDA
+Location: Gauteng, South Africa
+CV (PDF): https://malindawanga.me/Malinda_Wanga_CV.pdf
+
+## About
+- [Summary](https://malindawanga.me/#about): Full-stack developer profile, key highlights, and current focus.
+
+## Projects
+- [TrackServ](https://wangamalinda.github.io/TrackServ/): Civic issue-reporting platform with a live admin dashboard and realtime data subscriptions (React, Supabase).
+- [Qhawelethu Wellness Counselling](https://www.qhawelethuwc.co.za): Client-facing booking and intake platform for a counselling practice, built on a relational Supabase/SQL schema (React, Supabase, SQL).
+- [BusinessAdmin](https://wangamalinda.github.io/BusinessAdmin/): Admin management dashboard for streamlined business operations (React, JavaScript).
+- [SpareXpress Auto POS](https://wangamalinda.github.io/SpareXpress-Auto/): Point-of-sale and inventory system for a live automotive parts business (JavaScript, HTML/CSS).
+- [QhaWear](https://www.qhawear.com/): Fashion brand storefront and product showcase site.
+- [Food Paleis](https://wangamalinda.github.io/Food-Paleis/): Food ordering and showcase site with a dashboard-style interface.
+- [Exclusive Chillas](https://wangamalinda.github.io/Exclusive-Chillas/): Lifestyle and brand showcase site.
+- [Innovative Tech Solutions](http://www.innovativetechsolution.tech/): Corporate services showcase website.
+- [Dakalo](https://wangamalinda.github.io/Dakalo/): Web project demonstrating modern, interactive front-end techniques.
+
+## Education
+- Diploma in Information Technology, Richfield Graduate Institute of Technology, Pretoria (Feb 2024 – Dec 2026 expected). Top of a 180+ student cohort.
+- Matric Certificate, Marude Secondary School (completed December 2023).
+
+## Certifications
+- AWS Cloud Practitioner Essentials, AWS Elastic VMware Services, AWS .NET Workloads, AWS Introduction to Containers.
+- Cisco Networking Academy: Python Essentials 1 & 2, JavaScript Essentials 1, C++ Essentials 1, HTML Essentials, Ethical Hacking Fundamentals.
+
+## Skills
+- Languages & frameworks: JavaScript, Python, C++, HTML5, CSS, React.js, Vite, Node.js.
+- Data & backend: Supabase, PostgreSQL, SQL schema design.
+- Tools: Git & GitHub, cloud fundamentals (AWS). Currently building: C#, .NET.
+
+## Optional
+- [Download CV](https://malindawanga.me/Malinda_Wanga_CV.pdf): Full resume as a PDF.
